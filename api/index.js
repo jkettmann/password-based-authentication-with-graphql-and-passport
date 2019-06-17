@@ -2,7 +2,7 @@ import express from 'express';
 import session from 'express-session';
 import uuid from 'uuid/v4';
 import passport from 'passport';
-import { GraphQLLocalStrategy } from 'graphql-passport';
+import { GraphQLLocalStrategy, buildContext } from 'graphql-passport';
 import { ApolloServer } from 'apollo-server-express';
 import User from './User';
 import typeDefs from './typeDefs';
@@ -45,10 +45,7 @@ app.use(passport.session());
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => ({
-    getUser: () => req.user,
-    logout: () => req.logout(),
-  }),
+  context: ({ req, res }) => buildContext({ req, res, User }),
   playground: {
     settings: {
       'request.credentials': 'same-origin',

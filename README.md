@@ -27,6 +27,33 @@ npm start
 Visit [http://localhost:4000/graphql](http://localhost:4000/graphql). You will see the Apollo playground. There you can run following query and mutation
 
 ```graphql
+mutation {
+  login(email: "maurice@moss.com", password: "abcdefg") {
+    user {
+      id
+      firstName
+      lastName
+      email
+    }
+  }
+}
+
+mutation {
+  signup(
+    firstName: "Jen",
+    lastName: "Barber",
+    email: "jen@barber.com",
+    password: "qwerty"
+  ) {
+    user {
+      id
+      firstName
+      lastName
+      email
+    }
+  }
+}
+
 query {
   currentUser {
     id
