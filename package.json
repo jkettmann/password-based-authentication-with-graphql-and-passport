@@ -23,12 +23,12 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "graphql": "^14.5.8",
-    "graphql-passport": "^0.4.0",
+    "graphql-passport": "^0.5.0",
     "nodemon": "^1.19.3",
     "passport": "^0.4.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^3.3.0",
     "uuid": "^3.3.3"
   },
   "scripts": {
